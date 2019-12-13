@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\ricardo.e.carvalho\.Rider2019.3\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\ricardo.e.carvalho\.Rider2019.3\system\resharper-host\local\Transient\ReSharperHost\v193\SolutionCaches\_Mined underwater.-1808035134.00" t="ExcludeRecursive" />
+    <e p="C:\xampp\htdocs\unity3d\Mined underwater" t="IncludeRecursive">
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="EZ Camera Shake" t="Include">
+          <e p="Scripts" t="Include">
+            <e p="CameraShakeInstance.cs" t="Include" />
+            <e p="CameraShakePresets.cs" t="Include" />
+            <e p="CameraShaker.cs" t="Include" />
+            <e p="Utilities" t="Include">
+              <e p="CameraUtilities.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Scripts" t="Include">
+          <e p="backgroundLoop.cs" t="Include" />
+          <e p="backgroundRepeater.cs" t="Include" />
+          <e p="deployMines.cs" t="Include" />
+          <e p="mine.cs" t="Include" />
+          <e p="playerController.cs" t="Include" />
+          <e p="WaveMineSpawner.cs" t="Include" />
+        </e>
+      </e>
+      <e p="Mined underwater.sln" t="IncludeFlat" />
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="Packages" t="ExcludeRecursive" />
+      <e p="Temp\bin" t="ExcludeRecursive" />
+    </e>
+  </component>
+</project>
