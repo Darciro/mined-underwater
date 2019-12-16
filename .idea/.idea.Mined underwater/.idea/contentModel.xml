@@ -19,6 +19,7 @@
         <e p="Scripts" t="Include">
           <e p="backgroundLoop.cs" t="Include" />
           <e p="backgroundRepeater.cs" t="Include" />
+          <e p="CameraFollow.cs" t="Include" />
           <e p="deployMines.cs" t="Include" />
           <e p="mine.cs" t="Include" />
           <e p="playerController.cs" t="Include" />

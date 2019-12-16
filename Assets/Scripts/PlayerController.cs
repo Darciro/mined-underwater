@@ -4,17 +4,20 @@ using UnityEngine;
 using UnityEngine.UI;
 using EZCameraShake;
 
-public class playerController : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
+    private Rigidbody2D rb;
     public float speed;
     public float increment;
     public float maxY;
     public float minY;
 
+    private Vector2 moveAmount;
+
     private Vector2 targetPos;
-    private Vector3 fp;   //First touch position
-    private Vector3 lp;   //Last touch position
-    private float dragDistance;  //minimum distance for a swipe to be registered
+    private Vector3 fp; //First touch position
+    private Vector3 lp; //Last touch position
+    private float dragDistance; //minimum distance for a swipe to be registered
 
     public int health;
 
@@ -26,42 +29,29 @@ public class playerController : MonoBehaviour
 
     public GameObject spawner;
     public GameObject restartDisplay;
+    
+    public Transform target;
 
     void Start()
     {
+        rb = GetComponent<Rigidbody2D>();
         dragDistance = Screen.height * 15 / 100; //dragDistance is 15% height of the screen
         playerAnim = gameObject.GetComponent<Animator>();
     }
 
     private void Update()
     {
-        /*if (health <= 0) {
-            spawner.SetActive(false);
-            restartDisplay.SetActive(true);
-            Destroy(gameObject);
-        }*/
-
-        // healthDisplay.text = health.ToString();
         
-        Vector3 velocity = Vector3.zero;
-        Vector3 desiredPosition = transform.position + new Vector3(speed, 0, 0);
-        Vector3 smoothPosition = Vector3.SmoothDamp(transform.position, desiredPosition, ref velocity, 0.3f);
-        transform.position = smoothPosition;
-
-        // transform.position = Vector2.MoveTowards(transform.position, targetPos, speed * Time.deltaTime);
-
-        if (Input.GetKeyDown(KeyCode.W) && transform.position.y < maxY) {
-            CameraShaker.Instance.ShakeOnce(1f, 1f, .1f, 1f);
-            Instantiate(moveEffectSoundUp, transform.position, Quaternion.identity);
-            Instantiate(moveEffect, transform.position, Quaternion.identity);
-            targetPos = new Vector2(transform.position.x, transform.position.y + increment);
-            playerAnim.Play("PlayerMovingUp");
-        } else if (Input.GetKeyDown(KeyCode.S) && transform.position.y > minY) {
-            CameraShaker.Instance.ShakeOnce(1f, 1f, .1f, 1f);
-            Instantiate(moveEffectSoundDown, transform.position, Quaternion.identity);
-            Instantiate(moveEffect, transform.position, Quaternion.identity);
-            targetPos = new Vector2(transform.position.x, transform.position.y - increment);
-            playerAnim.Play("PlayerMovingDown");
+        Vector2 moveInput = new Vector2(1.0f, Input.GetAxisRaw("Vertical"));
+        moveAmount = moveInput.normalized * speed;
+        
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            Debug.Log("Cima");
+        }
+        else if (Input.GetKeyDown(KeyCode.S))
+        {
+            Debug.Log("Baixo");
         }
 
         #if UNITY_ANDROID
@@ -125,6 +115,13 @@ public class playerController : MonoBehaviour
             }
         }
         #endif
-
     }
+
+    private void FixedUpdate()
+    {
+        // transform.position += transform.right * speed * Time.deltaTime;
+        rb.MovePosition(rb.position + moveAmount * Time.fixedDeltaTime);
+        
+    }
+    
 }

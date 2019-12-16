@@ -1,26 +1,28 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using EZCameraShake;
+
 
 public class Mine : MonoBehaviour
 {
-    public float speed = 0.0f;
-    private Rigidbody2D rb;
-    private Vector2 screenBounds;
+    public float speed;
+    public GameObject effect;
+    public GameObject explosionSound;
 
-
-    // Use this for initialization
-    void Start () {
-        rb = this.GetComponent<Rigidbody2D>();
-        rb.velocity = new Vector2(-speed, 0);
-        screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
-
+    void Update () {
+        transform.Translate(Vector2.left * speed * Time.deltaTime);
     }
 
-    // Update is called once per frame
-    void Update () {
-        if(transform.position.x < screenBounds.x * 2){
-            Destroy(this.gameObject);
-        }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Player")) {
+            Instantiate(explosionSound, transform.position, Quaternion.identity);
+            // other.GetComponent<PlayerController>().health--;
+            // other.GetComponent<PlayerController>().camAnim.SetTrigger("shake");
+            CameraShaker.Instance.ShakeOnce(4f, 4f, .1f, 1f);
+            // Instantiate(effect, transform.position, Quaternion.identity);
+            Destroy(gameObject);
+        }   
     }
 }
