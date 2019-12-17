@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\ricardo.e.carvalho\.Rider2019.3\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\ricardo.e.carvalho\.Rider2019.3\system\resharper-host\local\Transient\ReSharperHost\v193\SolutionCaches\_Mined underwater.-1808035134.00" t="ExcludeRecursive" />
-    <e p="C:\xampp\htdocs\unity3d\Mined underwater" t="IncludeRecursive">
+    <e p="C:\Users\Rick Manu\.Rider2019.3\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Rick Manu\.Rider2019.3\system\resharper-host\local\Transient\ReSharperHost\v193\SolutionCaches\_Mined underwater.-1314555460.00" t="ExcludeRecursive" />
+    <e p="D:\Users\Rick Manu\Mined underwater" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="EZ Camera Shake" t="Include">
