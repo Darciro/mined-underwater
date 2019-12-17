@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -8,10 +9,6 @@ public class PlayerController : MonoBehaviour
 {
     private Rigidbody2D rb;
     public float speed;
-    public float increment;
-    public float maxY;
-    public float minY;
-
     private Vector2 moveAmount;
 
     private Vector2 targetPos;
@@ -20,6 +17,7 @@ public class PlayerController : MonoBehaviour
     private float dragDistance; //minimum distance for a swipe to be registered
 
     public int health;
+    public int maxHealth;
 
     public GameObject moveEffect;
     public GameObject moveEffectSoundUp;
@@ -29,30 +27,49 @@ public class PlayerController : MonoBehaviour
 
     public GameObject spawner;
     public GameObject restartDisplay;
+    public Image playerHealthBar;
     
     public Transform target;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        dragDistance = Screen.height * 15 / 100; //dragDistance is 15% height of the screen
         playerAnim = gameObject.GetComponent<Animator>();
+        dragDistance = Screen.height * 15 / 100; //dragDistance is 15% height of the screen
+        health = 100;
+        maxHealth = 100;
+        // playerHealthBar = GameObject.Find("ProgressBarHeart");
     }
 
     private void Update()
     {
+        // playerHealthBar.fillAmount -= 1.0f / 10f * Time.deltaTime;
+
         
-        Vector2 moveInput = new Vector2(1.0f, Input.GetAxisRaw("Vertical"));
+        Vector2 moveInput = new Vector2(0, Input.GetAxisRaw("Vertical"));
         moveAmount = moveInput.normalized * speed;
+
+        playerAnim.SetBool("swimming", true);
         
-        if (Input.GetKeyDown(KeyCode.W))
+        /*if (moveInput == Vector2.zero)
+        {
+            playerAnim.SetBool("swimming", false);
+        }*/
+        
+        
+        /*if (Input.GetKeyDown(KeyCode.W))
         {
             Debug.Log("Cima");
+            playerAnim.SetBool("swimmingUp", true);
+            playerAnim.SetBool("swimmingDown", false);
         }
         else if (Input.GetKeyDown(KeyCode.S))
         {
             Debug.Log("Baixo");
-        }
+            playerAnim.SetBool("swimmingUp", false);
+            playerAnim.SetBool("swimmingDown", true);
+        }*/
+
 
         #if UNITY_ANDROID
         // URL https://forum.unity.com/threads/simple-swipe-and-tap-mobile-input.376160/
@@ -119,9 +136,49 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        // transform.position += transform.right * speed * Time.deltaTime;
         rb.MovePosition(rb.position + moveAmount * Time.fixedDeltaTime);
+        float swimmingUpOrDown = Mathf.Abs( moveAmount.y);
+        // Debug.Log(moveAmount.y);
+        playerAnim.SetFloat("swimmingUpOrDown", swimmingUpOrDown);
+
+        /*Debug.Log(Input.GetAxisRaw("Vertical"));
+        if (Input.GetAxisRaw("Vertical") > 0)
+        {
+            playerAnim.SetTrigger("swimmingUp");
+        } else if (Input.GetAxisRaw("Vertical") < 0)
+        {
+            playerAnim.SetBool("swimmingDown", true);
+        }*/
+
+    }
+    
+    public void TakeDamage(int amount)
+    {
+        // Instantiate(hurtSound, transform.position, Quaternion.identity);
+        health -= amount;
+        UpdateHealthUI(health);
+        // hurtAnim.SetTrigger("hurt");
+        if (health <= 0)
+        {
+            // spawner.SetActive(false);
+            // restartDisplay.SetActive(true);
+            
+            Destroy(this.gameObject);
+            // sceneTransitions.LoadScene("Lose");
+        }
+    }
+    
+    void UpdateHealthUI(float currentHealth) {
+        /*Debug.Log( maxHealth / 100 );
+        Debug.Log( currentHealth / 100 );
+        Debug.Log( (maxHealth / 100) - (currentHealth / 100 ) );
+
+        float subtract = (float) maxHealth - currentHealth;
+        Debug.Log( "subtract " + subtract );
         
+        playerHealthBar.fillAmount -= subtract / 1.0f * Time.deltaTime;*/
+        playerHealthBar.fillAmount = currentHealth / 100;
+
     }
     
 }

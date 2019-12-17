@@ -16,11 +16,17 @@
             </e>
           </e>
         </e>
+        <e p="JuicyUI" t="Include">
+          <e p="Demo" t="Include">
+            <e p="ShopScroll.cs" t="Include" />
+          </e>
+        </e>
         <e p="Scripts" t="Include">
           <e p="backgroundLoop.cs" t="Include" />
           <e p="backgroundRepeater.cs" t="Include" />
           <e p="CameraFollow.cs" t="Include" />
           <e p="deployMines.cs" t="Include" />
+          <e p="FreeParallax.cs" t="Include" />
           <e p="mine.cs" t="Include" />
           <e p="playerController.cs" t="Include" />
           <e p="WaveMineSpawner.cs" t="Include" />

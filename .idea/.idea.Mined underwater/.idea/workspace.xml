@@ -2,14 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1b84dbc9-1045-4b21-80f7-965bba630727" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Mined underwater/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Mined underwater/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Mined underwater/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Mined underwater/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Mined underwater/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Mined underwater/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Mined underwater/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Anims/Player Animator.controller" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Anims/Player Animator.controller.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Anims/swim.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Anims/swim.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/underwater-mine.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/underwater-mine.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Mine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Mine.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/deployMines.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/deployMines.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/playerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/backgroundLoop.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/backgroundLoop.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -22,12 +28,14 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/backgroundRepeater.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Mine.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/JuicyUI/Demo/ShopScroll.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/deployMines.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/backgroundLoop.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/FreeParallax.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/WaveMineSpawner.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/CameraFollow.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Mine.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -36,10 +44,14 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/mine.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/WaveMineSpawner.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/playerController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Mine.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/deployMines.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/backgroundLoop.cs" />
+        <option value="$PROJECT_DIR$/Assets/JuicyUI/Demo/ShopScroll.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/RendererExtensions.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ScrollingScript.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/CameraFollow.cs" />
+        <option value="$PROJECT_DIR$/Assets/FreeParallax/Scripts/FreeParallax.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/backgroundLoop.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Mine.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
       </list>
     </option>
@@ -100,7 +112,8 @@
       <workItem from="1576144966708" duration="80000" />
       <workItem from="1576145075697" duration="7443000" />
       <workItem from="1576226633173" duration="12967000" />
-      <workItem from="1576496528272" duration="6350000" />
+      <workItem from="1576496528272" duration="6479000" />
+      <workItem from="1576575349322" duration="16559000" />
     </task>
     <servers />
   </component>
@@ -139,6 +152,10 @@
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
     <state x="-1282" y="125" width="644" height="789" key="find.popup/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1576498882627" />
+    <state x="-1304" y="240" key="run.anything.popup" timestamp="1576598038319">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="-1304" y="240" key="run.anything.popup/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1576598038319" />
     <state x="623" y="225" key="search.everywhere.popup" timestamp="1576145011306">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
