@@ -4,10 +4,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using EZCameraShake;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
     private Rigidbody2D rb;
+    public float increment;
     public float speed;
     private Vector2 moveAmount;
 
@@ -18,6 +20,7 @@ public class PlayerController : MonoBehaviour
 
     public int health;
     public int maxHealth;
+    public int eggs;
 
     public GameObject moveEffect;
     public GameObject moveEffectSoundUp;
@@ -28,9 +31,12 @@ public class PlayerController : MonoBehaviour
     public GameObject spawner;
     public GameObject restartDisplay;
     public Image playerHealthBar;
+    public Image eggsCollectedBar;
     
     public Transform target;
 
+    private SceneTransitions sceneTransitions;
+    
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -38,118 +44,24 @@ public class PlayerController : MonoBehaviour
         dragDistance = Screen.height * 15 / 100; //dragDistance is 15% height of the screen
         health = 100;
         maxHealth = 100;
+        sceneTransitions = FindObjectOfType<SceneTransitions>();
+        eggs = 0;
         // playerHealthBar = GameObject.Find("ProgressBarHeart");
     }
 
     private void Update()
     {
-        // playerHealthBar.fillAmount -= 1.0f / 10f * Time.deltaTime;
-
-        
         Vector2 moveInput = new Vector2(0, Input.GetAxisRaw("Vertical"));
         moveAmount = moveInput.normalized * speed;
-
         playerAnim.SetBool("swimming", true);
-        
-        /*if (moveInput == Vector2.zero)
-        {
-            playerAnim.SetBool("swimming", false);
-        }*/
-        
-        
-        /*if (Input.GetKeyDown(KeyCode.W))
-        {
-            Debug.Log("Cima");
-            playerAnim.SetBool("swimmingUp", true);
-            playerAnim.SetBool("swimmingDown", false);
-        }
-        else if (Input.GetKeyDown(KeyCode.S))
-        {
-            Debug.Log("Baixo");
-            playerAnim.SetBool("swimmingUp", false);
-            playerAnim.SetBool("swimmingDown", true);
-        }*/
 
-
-        #if UNITY_ANDROID
-        // URL https://forum.unity.com/threads/simple-swipe-and-tap-mobile-input.376160/
-
-        if (Input.touchCount == 1) // user is touching the screen with a single touch
-        {
-            Touch touch = Input.GetTouch(0); // get the touch
-            if (touch.phase == TouchPhase.Began) //check for the first touch
-            {
-                fp = touch.position;
-                lp = touch.position;
-            }
-            else if (touch.phase == TouchPhase.Moved) // update the last position based on where they moved
-            {
-                lp = touch.position;
-            }
-            else if (touch.phase == TouchPhase.Ended) //check if the finger is removed from the screen
-            {
-                lp = touch.position;  //last touch position. Ommitted if you use list
- 
-                //Check if drag distance is greater than 20% of the screen height
-                if (Mathf.Abs(lp.x - fp.x) > dragDistance || Mathf.Abs(lp.y - fp.y) > dragDistance)
-                {//It's a drag
-                 //check if the drag is vertical or horizontal
-                    if (Mathf.Abs(lp.x - fp.x) > Mathf.Abs(lp.y - fp.y))
-                    {   //If the horizontal movement is greater than the vertical movement...
-                        if ((lp.x > fp.x))  //If the movement was to the right)
-                        {   //Right swipe
-                            Debug.Log("Right Swipe");
-                        }
-                        else
-                        {   //Left swipe
-                            Debug.Log("Left Swipe");
-                        }
-                    }
-                    else
-                    {   //the vertical movement is greater than the horizontal movement
-                        if (lp.y > fp.y)  //If the movement was up
-                        {   //Up swipe
-                            Debug.Log("Up Swipe");
-
-                            Instantiate(moveEffect, transform.position, Quaternion.identity);
-                            targetPos = new Vector2(transform.position.x, transform.position.y + increment);
-                            playerAnim.Play("PlayerMovingUp");
-                        }
-                        else
-                        {   //Down swipe
-                            Debug.Log("Down Swipe");
-
-                            Instantiate(moveEffect, transform.position, Quaternion.identity);
-                            targetPos = new Vector2(transform.position.x, transform.position.y - increment);
-                            playerAnim.Play("PlayerMovingDown");
-                        }
-                    }
-                }
-                else
-                {   //It's a tap as the drag distance is less than 20% of the screen height
-                    Debug.Log("Tap");
-                }
-            }
-        }
-        #endif
     }
 
     private void FixedUpdate()
     {
         rb.MovePosition(rb.position + moveAmount * Time.fixedDeltaTime);
-        float swimmingUpOrDown = Mathf.Abs( moveAmount.y);
-        // Debug.Log(moveAmount.y);
-        playerAnim.SetFloat("swimmingUpOrDown", swimmingUpOrDown);
-
-        /*Debug.Log(Input.GetAxisRaw("Vertical"));
-        if (Input.GetAxisRaw("Vertical") > 0)
-        {
-            playerAnim.SetTrigger("swimmingUp");
-        } else if (Input.GetAxisRaw("Vertical") < 0)
-        {
-            playerAnim.SetBool("swimmingDown", true);
-        }*/
-
+        playerAnim.SetFloat("swimmingUpOrDown", moveAmount.y);
+        
     }
     
     public void TakeDamage(int amount)
@@ -164,6 +76,7 @@ public class PlayerController : MonoBehaviour
             // restartDisplay.SetActive(true);
             
             Destroy(this.gameObject);
+            sceneTransitions.LoadScene("Loose");
             // sceneTransitions.LoadScene("Lose");
         }
     }
@@ -178,6 +91,24 @@ public class PlayerController : MonoBehaviour
         
         playerHealthBar.fillAmount -= subtract / 1.0f * Time.deltaTime;*/
         playerHealthBar.fillAmount = currentHealth / 100;
+
+    }
+    
+    public void GetEgg(int amount)
+    {
+        eggs += amount;
+        
+        Debug.Log("Eggs now: " + eggs);
+        UpdateEgghUI(eggs);
+        if (eggs >= 10)
+        {
+            // WIN
+        }
+    }
+    
+    void UpdateEgghUI(float currentHealth) {
+        Debug.Log("Eggs updating: " + currentHealth);
+        eggsCollectedBar.fillAmount = currentHealth / 10;
 
     }
     

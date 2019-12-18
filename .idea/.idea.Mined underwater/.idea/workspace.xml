@@ -5,13 +5,27 @@
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Mined underwater/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Mined underwater/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Mined underwater/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Mined underwater/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Mined underwater/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Mined underwater/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/2D Green Turtle/Sprites/SWIM.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/UI/heart-icon.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/UI/heart-icon.jpg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/UI/turtle-egg-alt.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/UI/turtle-egg-alt.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Underwater_pack/Original PSD.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Underwater_pack/backgrounds.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Anims/Player/Player Animator.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Anims/Player/Player Animator.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Anims/Player/Swim-down.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Anims/Player/Swim-down.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Anims/Player/Swim-up.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Anims/Player/Swim-up.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/EZ Camera Shake/Scripts.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/EZ Camera Shake/Scripts.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/EZ Camera Shake/Scripts/CameraShakeInstance.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/EZ Camera Shake/Scripts/CameraShakeInstance.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/EZ Camera Shake/Scripts/CameraShakePresets.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/EZ Camera Shake/Scripts/CameraShakePresets.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/EZ Camera Shake/Scripts/CameraShaker.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/EZ Camera Shake/Scripts/CameraShaker.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/EZ Camera Shake/Scripts/Utilities.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/EZ Camera Shake/Scripts/Utilities.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/EZ Camera Shake/Scripts/Utilities/CameraUtilities.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/EZ Camera Shake/Scripts/Utilities/CameraUtilities.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/underwater-mine.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/underwater-mine.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Mine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Mine.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/backgroundRepeater.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/backgroundRepeater.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/deployMines.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/deployMines.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scenes/SampleScene.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scenes/SampleScene.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/UnityConnectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/UnityConnectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,32 +36,49 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/deployMines.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/CameraFollow.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Mine.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/FreeParallax.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/BackgroundRepeater.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/JuicyUI/Demo/ShopScroll.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/WaveMineSpawner.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/backgroundRepeater.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/deployMines.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/A278EBD4-4AB0-472B-B8E6-38263E06CD61/0b/f08e1d4f/Transform.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/SpawnerDestroyerController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/TurtleEgg.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/backgroundLoop.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/FreeParallax.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UIController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/WaveMineSpawner.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/CameraFollow.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/MobileController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Mine.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/BackgroundMoveLeft.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/EZ Camera Shake/Demo/ShakeDemo.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/SceneTransitions.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/backgroundRepeater.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/mine.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/WaveMineSpawner.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/playerController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/deployMines.cs" />
         <option value="$PROJECT_DIR$/Assets/JuicyUI/Demo/ShopScroll.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/RendererExtensions.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ScrollingScript.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/CameraFollow.cs" />
         <option value="$PROJECT_DIR$/Assets/FreeParallax/Scripts/FreeParallax.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/backgroundLoop.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UIController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/SceneTransitions.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/TurtleEgg.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Mine.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/CameraFollow.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/MobileController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/backgroundRepeater.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/SpawnerDestroyerController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/deployMines.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/BGMovementLeft.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/BackgroundMoveLeft.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/BackgroundRepeater.cs" />
       </list>
     </option>
   </component>
@@ -144,10 +175,10 @@
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
     <state x="-1828" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1576500047193" />
-    <state x="-1282" y="125" width="644" height="789" key="find.popup" timestamp="1576498882627">
+    <state x="-1282" y="125" width="644" height="789" key="find.popup" timestamp="1576678614091">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="-1282" y="125" width="644" height="789" key="find.popup/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1576498882627" />
+    <state x="-1282" y="125" width="644" height="789" key="find.popup/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1576678614091" />
     <state x="-1304" y="240" key="run.anything.popup" timestamp="1576598038319">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>

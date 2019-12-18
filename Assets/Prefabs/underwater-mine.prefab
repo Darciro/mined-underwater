@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 7170486174027583666}
   - component: {fileID: 7283420300954101339}
   - component: {fileID: 2754594264739711600}
+  - component: {fileID: 263125816104697947}
   m_Layer: 0
   m_Name: underwater-mine
-  m_TagString: Untagged
+  m_TagString: Mine
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -110,6 +111,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fabfd78a3a71a554e8cef3ff60f8597e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 15
   effect: {fileID: 0}
   explosionSound: {fileID: 0}
+--- !u!50 &263125816104697947
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7170486174027583693}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

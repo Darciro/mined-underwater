@@ -20,7 +20,7 @@ public class Mine : MonoBehaviour
             // Instantiate(explosionSound, transform.position, Quaternion.identity);
             // other.GetComponent<PlayerController>().health--;
             // other.GetComponent<PlayerController>().camAnim.SetTrigger("shake");
-            // CameraShaker.Instance.ShakeOnce(4f, 4f, .1f, 1f);
+            CameraShaker.Instance.ShakeOnce(4f, 4f, .1f, 1f);
             // Instantiate(effect, transform.position, Quaternion.identity);
             other.GetComponent<PlayerController>().TakeDamage(30);
             Destroy(gameObject);

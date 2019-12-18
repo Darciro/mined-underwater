@@ -23,6 +23,7 @@ public class deployMines : MonoBehaviour
     private void spawnMine(){
         GameObject a = Instantiate(minePrefab) as GameObject;
         a.transform.position = new Vector2(screenBounds.x, Random.Range(-screenBounds.y, screenBounds.y));
+        // a.transform.Translate(Vector2.left * 10.0f * Time.deltaTime);
     }
     
     IEnumerator mineWave(){
