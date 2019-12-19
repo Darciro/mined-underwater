@@ -43,7 +43,15 @@
           <e p="SpawnerDestroyerController.cs" t="Include" />
           <e p="TurtleEgg.cs" t="Include" />
           <e p="UIController.cs" t="Include" />
+          <e p="Underwater.cs" t="Include" />
+          <e p="UnderwaterFX.cs" t="Include" />
+          <e p="Water.cs" t="Include" />
           <e p="WaveMineSpawner.cs" t="Include" />
+        </e>
+        <e p="Shaders" t="Include">
+          <e p="noiseSimplex.cginc" t="Include" />
+          <e p="NoiseUnderwater.shader" t="Include" />
+          <e p="UnderwaterFXShader.shader" t="Include" />
         </e>
       </e>
       <e p="Mined underwater.sln" t="IncludeFlat" />

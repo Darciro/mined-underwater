@@ -9,27 +9,21 @@ using UnityEngine.SceneManagement;
 public class PlayerController : MonoBehaviour
 {
     private Rigidbody2D rb;
-    public float increment;
+    private TrailRenderer playerTrail;
     public float speed;
-    private Vector2 moveAmount;
+    public float speedUpDown;
 
-    private Vector2 targetPos;
-    private Vector3 fp; //First touch position
-    private Vector3 lp; //Last touch position
-    private float dragDistance; //minimum distance for a swipe to be registered
+    private Vector3 touchPosition;
+    private Vector3 direction;
+    private Vector2 moveAmount;
 
     public int health;
     public int maxHealth;
     public int eggs;
 
     public GameObject moveEffect;
-    public GameObject moveEffectSoundUp;
-    public GameObject moveEffectSoundDown;
     public Animator playerAnim;
-    public Text healthDisplay;
 
-    public GameObject spawner;
-    public GameObject restartDisplay;
     public Image playerHealthBar;
     public Image eggsCollectedBar;
     
@@ -40,27 +34,48 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        playerTrail = GetComponent<TrailRenderer>();
         playerAnim = gameObject.GetComponent<Animator>();
-        dragDistance = Screen.height * 15 / 100; //dragDistance is 15% height of the screen
         health = 100;
         maxHealth = 100;
         sceneTransitions = FindObjectOfType<SceneTransitions>();
         eggs = 0;
-        // playerHealthBar = GameObject.Find("ProgressBarHeart");
     }
 
     private void Update()
     {
-        Vector2 moveInput = new Vector2(0, Input.GetAxisRaw("Vertical"));
-        moveAmount = moveInput.normalized * speed;
         playerAnim.SetBool("swimming", true);
-
     }
 
     private void FixedUpdate()
     {
+        #if UNITY_ANDROID
+        
+        if (Input.touchCount > 0)
+        {
+            Touch touch = Input.GetTouch(0);
+            touchPosition = Camera.main.ScreenToWorldPoint(touch.position);
+            touchPosition.z = 0;
+            direction = (touchPosition - transform.position);
+            rb.velocity = new Vector2(direction.x, direction.y) * speedUpDown;
+            
+            playerAnim.SetFloat("swimmingUpOrDown", direction.y);
+
+            if (touch.phase == TouchPhase.Ended)
+            {
+                rb.velocity = Vector2.zero;
+                playerAnim.SetFloat("swimmingUpOrDown", 0f);
+            }
+                
+        }
+
+        #endif
+        
+        /*Vector2 moveInput = new Vector2(0, Input.GetAxisRaw("Vertical"));
+        moveAmount = moveInput.normalized * speed;
+        playerAnim.SetBool("swimming", true);
         rb.MovePosition(rb.position + moveAmount * Time.fixedDeltaTime);
-        playerAnim.SetFloat("swimmingUpOrDown", moveAmount.y);
+        playerAnim.SetFloat("swimmingUpOrDown", moveAmount.y);*/
         
     }
     

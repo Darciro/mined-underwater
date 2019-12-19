@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 1590978528769086975}
   - component: {fileID: 8935898734838744869}
   - component: {fileID: 898603660308140807}
-  - component: {fileID: 4685469519872866112}
   - component: {fileID: 8081056909219114864}
   m_Layer: 0
   m_Name: algae_long_20000
@@ -102,19 +101,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &4685469519872866112
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5796086065760908150}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b85cea19e895bfe4b82f25300d53046c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 2
 --- !u!114 &8081056909219114864
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -127,4 +113,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b85cea19e895bfe4b82f25300d53046c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 3

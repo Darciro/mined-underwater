@@ -23,7 +23,7 @@ public class BackgroundRepeater : MonoBehaviour {
 	    // GameObject a = Instantiate(minePrefab) as GameObject;
 	    GameObject a = Instantiate( bgItems[Random.Range(0, bgItems.Length -1)] ) as GameObject;
 	    Debug.Log( "New BG: " + a.name );
-	    a.transform.position = new Vector2(screenBounds.x, Random.Range(-5.00f, 0));
+	    a.transform.position = new Vector2(screenBounds.x, Random.Range(-3.80f, 0));
     }
     
     IEnumerator bgWave(){
