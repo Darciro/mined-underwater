@@ -112,8 +112,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 15
-  effect: {fileID: 0}
-  explosionSound: {fileID: 0}
+  explosionEffect: {fileID: 1210056779353876, guid: 02753376bdf693d41b2a152f67de65e7,
+    type: 3}
 --- !u!50 &263125816104697947
 Rigidbody2D:
   serializedVersion: 4

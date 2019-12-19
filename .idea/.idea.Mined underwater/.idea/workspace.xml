@@ -4,25 +4,16 @@
     <list default="true" id="1b84dbc9-1045-4b21-80f7-965bba630727" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Mined underwater/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Mined underwater/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Mined underwater/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Mined underwater/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Anims/Player/Swim-down.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Anims/Player/Swim-down.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Anims/Player/Swim-up.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Anims/Player/Swim-up.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/BG/Depth-2/aglae_0060000.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/BG/Depth-2/aglae_0060000.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/BG/Depth-2/algae_0010000.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/BG/Depth-2/algae_0010000.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/BG/Depth-2/algae_long_20000.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/BG/Depth-2/algae_long_20000.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/BG/Depth-2/algae_long_40000.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/BG/Depth-2/algae_long_40000.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/BG/Depth-2/moss_002.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/BG/Depth-2/moss_002.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/BG/Depth-2/moss_005.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/BG/Depth-2/moss_005.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/BG/Depth-2/moss_008.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/BG/Depth-2/moss_008.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/BG/Depth-2/rock_017.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/BG/Depth-2/rock_017.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/BG/Depth-2/rock_019.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/BG/Depth-2/rock_019.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/BG/Depth-2/rock_022.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/BG/Depth-2/rock_022.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/BG/Depth-2/rock_13.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/BG/Depth-2/rock_13.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2D Green Turtle/Sprites/SWIM.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/NoiseUnderwaterMat.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/NoiseUnderwaterMat.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/underwater-mine.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/underwater-mine.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Mine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Mine.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Underwater_pack/effects/bubbles/bubbles.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Underwater_pack/effects/bubbles/bubbles.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Underwater_pack/effects/particle_fish_001/Fish_001.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Underwater_pack/effects/particle_fish_001/Fish_001.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Underwater_pack/effects/shine_01/shine_01.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Underwater_pack/effects/shine_01/shine_01.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/backgroundRepeater.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/backgroundRepeater.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Underwater_pack/Original PSD.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Underwater_pack/backgrounds.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Scenes/MainScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scenes/MainScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/UnityConnectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/UnityConnectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,30 +24,20 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/JuicyUI/Demo/ShopScroll.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/SpawnerDestroyerController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Underwater.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Mine.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Shaders/UnderwaterFXShader.shader" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UnderwaterFX.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/SceneTransitions.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/BackgroundRepeater.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/deployMines.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/A278EBD4-4AB0-472B-B8E6-38263E06CD61/0b/f08e1d4f/Transform.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/TurtleEgg.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/backgroundLoop.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/FreeParallax.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UIController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/WaveMineSpawner.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Shaders/NoiseUnderwater.shader" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Underwater_Explosion/Scripts/Underwater_Explosion.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/CameraFollow.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/MobileController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Mine.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/FreeParallax.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/JuicyUI/Demo/ShopScroll.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UIController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/BackgroundMoveLeft.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/EZ Camera Shake/Demo/ShakeDemo.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Water.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/WaveMineSpawner.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/BackgroundRepeater.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/backgroundLoop.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -72,7 +53,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/UIController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SceneTransitions.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/TurtleEgg.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Mine.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/CameraFollow.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/MobileController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/backgroundRepeater.cs" />
@@ -80,7 +60,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/deployMines.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/BGMovementLeft.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/BackgroundMoveLeft.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Underwater.cs" />
         <option value="$PROJECT_DIR$/Assets/_Shaders/NoiseUnderwater.shader" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Water.cs" />
@@ -88,6 +67,9 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/UnderwaterFX.cs" />
         <option value="$PROJECT_DIR$/Assets/Shaders/NoiseUnderwater.shader" />
         <option value="$PROJECT_DIR$/Assets/Scripts/BackgroundRepeater.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Mine.cs" />
       </list>
     </option>
   </component>
@@ -151,6 +133,7 @@
       <workItem from="1576575349322" duration="16559000" />
       <workItem from="1576617676554" duration="855000" />
       <workItem from="1576743593881" duration="23817000" />
+      <workItem from="1576786957762" duration="3009000" />
     </task>
     <servers />
   </component>
@@ -193,10 +176,11 @@
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
     <state x="-1282" y="125" width="644" height="789" key="find.popup/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1576678614091" />
-    <state x="-1304" y="240" key="run.anything.popup" timestamp="1576598038319">
-      <screen x="-1920" y="0" width="1920" height="1040" />
+    <state x="616" y="240" key="run.anything.popup" timestamp="1576789397339">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="-1304" y="240" key="run.anything.popup/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1576598038319" />
+    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1576789397339" />
     <state x="623" y="225" key="search.everywhere.popup" timestamp="1576145011306">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

@@ -49,6 +49,13 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
+    
+        Vector2 moveInput = new Vector2(0, Input.GetAxisRaw("Vertical"));
+        moveAmount = moveInput.normalized * speed;
+        playerAnim.SetBool("swimming", true);
+        rb.MovePosition(rb.position + moveAmount * Time.fixedDeltaTime);
+        playerAnim.SetFloat("swimmingUpOrDown", moveAmount.y);
+        
         #if UNITY_ANDROID
         
         if (Input.touchCount > 0)
@@ -70,13 +77,7 @@ public class PlayerController : MonoBehaviour
         }
 
         #endif
-        
-        /*Vector2 moveInput = new Vector2(0, Input.GetAxisRaw("Vertical"));
-        moveAmount = moveInput.normalized * speed;
-        playerAnim.SetBool("swimming", true);
-        rb.MovePosition(rb.position + moveAmount * Time.fixedDeltaTime);
-        playerAnim.SetFloat("swimmingUpOrDown", moveAmount.y);*/
-        
+
     }
     
     public void TakeDamage(int amount)
