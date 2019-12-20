@@ -19,11 +19,10 @@ public class BackgroundRepeater : MonoBehaviour {
 	    screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
     }
     
-    private void newBG(){
-	    // GameObject a = Instantiate(minePrefab) as GameObject;
-	    GameObject a = Instantiate( bgItems[Random.Range(0, bgItems.Length -1)] ) as GameObject;
-	    Debug.Log( "New BG: " + a.name );
-	    a.transform.position = new Vector2(screenBounds.x, Random.Range(-3.80f, 0));
+    private void newBG()
+    {
+	    GameObject a = Instantiate(bgItems[Random.Range(0, bgItems.Length - 1)]);
+	    a.transform.position = new Vector2( (screenBounds.x + 5f), Random.Range(-3.80f, 0));
     }
     
     IEnumerator bgWave(){

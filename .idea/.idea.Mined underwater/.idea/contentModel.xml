@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\Rick Manu\.Rider2019.3\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\Rick Manu\.Rider2019.3\system\resharper-host\local\Transient\ReSharperHost\v193\SolutionCaches\_Mined underwater.-1314555460.00" t="ExcludeRecursive" />
-    <e p="D:\Users\Rick Manu\Mined underwater" t="IncludeRecursive">
+    <e p="C:\Users\ricardo.e.carvalho\.Rider2019.3\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\ricardo.e.carvalho\.Rider2019.3\system\resharper-host\local\Transient\ReSharperHost\v193\SolutionCaches\_Mined underwater.-1808035134.00" t="ExcludeRecursive" />
+    <e p="C:\xampp\htdocs\unity3d\Mined underwater" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="EZ Camera Shake" t="Include">
@@ -34,13 +34,14 @@
           <e p="BackgroundMoveLeft.cs" t="Include" />
           <e p="backgroundRepeater.cs" t="Include" />
           <e p="CameraFollow.cs" t="Include" />
-          <e p="deployMines.cs" t="Include" />
           <e p="FreeParallax.cs" t="Include" />
           <e p="GameController.cs" t="Include" />
           <e p="mine.cs" t="Include" />
           <e p="MobileController.cs" t="Include" />
           <e p="playerController.cs" t="Include" />
+          <e p="QuitGame.cs" t="Include" />
           <e p="SceneTransitions.cs" t="Include" />
+          <e p="Spawner.cs" t="Include" />
           <e p="SpawnerDestroyerController.cs" t="Include" />
           <e p="TurtleEgg.cs" t="Include" />
           <e p="UIController.cs" t="Include" />
@@ -53,16 +54,6 @@
           <e p="noiseSimplex.cginc" t="Include" />
           <e p="NoiseUnderwater.shader" t="Include" />
           <e p="UnderwaterFXShader.shader" t="Include" />
-        </e>
-        <e p="Underwater_Explosion" t="Include">
-          <e p="Click the left mouse button for explosion.txt" t="Include" />
-          <e p="Scripts" t="Include">
-            <e p="Underwater_Explosion.cs" t="Include" />
-          </e>
-          <e p="Shaders" t="Include">
-            <e p="AlphaSelfIllum_NoFog.shader" t="Include" />
-          </e>
-          <e p="Underwater_Explosion - Documentation.txt" t="Include" />
         </e>
       </e>
       <e p="Mined underwater.sln" t="IncludeFlat" />
