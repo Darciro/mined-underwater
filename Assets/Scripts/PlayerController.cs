@@ -103,12 +103,16 @@ public class PlayerController : MonoBehaviour
         playerAnim.SetTrigger("hurt");
         if (health <= 0)
         {
-            playerAnim.SetTrigger("dead");
-            _rb.isKinematic = true;
-            _collider.enabled = false;
-
-            StartCoroutine(ShowLooseScreen());
+            Die();
         }
+    }
+
+    private void Die()
+    {
+        playerAnim.SetTrigger("dead");
+        _rb.isKinematic = true;
+        _collider.enabled = false;
+        StartCoroutine(ShowLooseScreen());
     }
     
     IEnumerator ShowLooseScreen() {
