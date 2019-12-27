@@ -10,23 +10,20 @@ public class PlayerController : MonoBehaviour
 {
     private Rigidbody2D _rb;
     private BoxCollider2D _collider;
+    private Vector3 _touchPosition;
+    private Vector3 _direction;
+    private Vector2 _moveAmount;
     
     public float speed;
     public float speedUpDown;
-
-    private Vector3 touchPosition;
-    private Vector3 direction;
-    private Vector2 moveAmount;
-
     public int health;
-    public int maxHealth;
     public int eggs;
-
     public GameObject moveEffect;
     public Animator playerAnim;
-
     public Image playerHealthBar;
     public Image eggsCollectedBar;
+    public GameObject damageTaken;
+    public GameObject eggCollectedPlus;
 
     private SceneTransitions sceneTransitions;
     
@@ -35,9 +32,8 @@ public class PlayerController : MonoBehaviour
         _rb = GetComponent<Rigidbody2D>();
         _collider = GetComponent<BoxCollider2D>();
         playerAnim = gameObject.GetComponent<Animator>();
-        health = 100;
-        maxHealth = 100;
         sceneTransitions = FindObjectOfType<SceneTransitions>();
+        health = 100;
         eggs = 0;
     }
 
@@ -57,10 +53,10 @@ public class PlayerController : MonoBehaviour
         // For tests purposes 
         #if UNITY_EDITOR_WIN
         Vector2 moveInput = new Vector2(0, Input.GetAxisRaw("Vertical"));
-        moveAmount = moveInput.normalized * speed;
+        _moveAmount = moveInput.normalized * speed;
         playerAnim.SetBool("swimming", true);
-        _rb.MovePosition(_rb.position + moveAmount * Time.fixedDeltaTime);
-        playerAnim.SetFloat("swimmingUpOrDown", moveAmount.y);
+        _rb.MovePosition(_rb.position + _moveAmount * Time.fixedDeltaTime);
+        playerAnim.SetFloat("swimmingUpOrDown", _moveAmount.y);
         #endif
         // For tests purposes 
 
@@ -75,12 +71,12 @@ public class PlayerController : MonoBehaviour
             }else{
                 // Left side
                 
-                touchPosition = Camera.main.ScreenToWorldPoint(touch.position);
-                touchPosition.z = 0;
-                direction = (touchPosition - transform.position);
-                _rb.velocity = new Vector2(direction.x, direction.y) * speedUpDown;
+                _touchPosition = Camera.main.ScreenToWorldPoint(touch.position);
+                _touchPosition.z = 0;
+                _direction = (_touchPosition - transform.position);
+                _rb.velocity = new Vector2(_direction.x, _direction.y) * speedUpDown;
             
-                playerAnim.SetFloat("swimmingUpOrDown", direction.y);
+                playerAnim.SetFloat("swimmingUpOrDown", _direction.y);
 
                 if (touch.phase == TouchPhase.Ended)
                 {
@@ -101,6 +97,8 @@ public class PlayerController : MonoBehaviour
         health -= amount;
         UpdateHealthUI(health);
         playerAnim.SetTrigger("hurt");
+        var go= Instantiate(damageTaken, transform.position, Quaternion.identity, transform);
+        go.GetComponent<TextMesh>().text = amount.ToString();
         if (health <= 0)
         {
             Die();
@@ -123,7 +121,11 @@ public class PlayerController : MonoBehaviour
     }
     
     void UpdateHealthUI(float currentHealth) {
+        var curHealth = playerHealthBar.transform.parent.Find("CurrentHealth");
+        curHealth.GetComponent<Text>().text = currentHealth.ToString();
+        
         playerHealthBar.fillAmount = currentHealth / 100;
+        
 
     }
     
@@ -131,14 +133,18 @@ public class PlayerController : MonoBehaviour
     {
         eggs += amount;
         UpdateEgghUI(eggs);
+        Instantiate(eggCollectedPlus, transform.position, Quaternion.identity, transform);
         if (eggs >= 10)
         {
             sceneTransitions.LoadScene("Won");
         }
     }
     
-    void UpdateEgghUI(float currentHealth) {
-        eggsCollectedBar.fillAmount = currentHealth / 10;
+    void UpdateEgghUI(float eggsCurCollected) {
+        var eggsCollected = eggsCollectedBar.transform.parent.Find("CurrentCollectedEggs");
+        eggsCollected.GetComponent<Text>().text = eggsCurCollected.ToString();
+        
+        eggsCollectedBar.fillAmount = eggsCurCollected / 10;
 
     }
     

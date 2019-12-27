@@ -34,6 +34,7 @@
           <e p="BackgroundMoveLeft.cs" t="Include" />
           <e p="backgroundRepeater.cs" t="Include" />
           <e p="CameraFollow.cs" t="Include" />
+          <e p="FloatingText.cs" t="Include" />
           <e p="FreeParallax.cs" t="Include" />
           <e p="GameController.cs" t="Include" />
           <e p="mine.cs" t="Include" />
