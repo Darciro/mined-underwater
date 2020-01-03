@@ -37,6 +37,7 @@
           <e p="FloatingText.cs" t="Include" />
           <e p="FreeParallax.cs" t="Include" />
           <e p="GameController.cs" t="Include" />
+          <e p="LayerCorrection.cs" t="Include" />
           <e p="mine.cs" t="Include" />
           <e p="MobileController.cs" t="Include" />
           <e p="playerController.cs" t="Include" />
