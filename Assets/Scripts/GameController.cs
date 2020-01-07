@@ -64,6 +64,7 @@ public class GameController : MonoBehaviour
 
     public void PauseResumeGame(bool showPauseGui = true)
     {
+        Debug.Log(showPauseGui);
         if (GameIsPaused)
         {
             if (showPauseGui)
