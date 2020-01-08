@@ -337,6 +337,8 @@ MonoBehaviour:
   - {fileID: 6889983338800353947, guid: 4a5dbcc362bab434d8062fe225df676d, type: 3}
   respawnTimeStart: 3
   respawnTimeEnd: 6
+  _minY: 0
+  _maxY: 0
 --- !u!1 &29624770
 GameObject:
   m_ObjectHideFlags: 0
@@ -1684,6 +1686,8 @@ MonoBehaviour:
   - {fileID: 2052779132200465468, guid: 6d1c4266978483945b30c8bf22d141f3, type: 3}
   respawnTimeStart: 15
   respawnTimeEnd: 30
+  _minY: 0
+  _maxY: 0
 --- !u!1 &216332581
 GameObject:
   m_ObjectHideFlags: 0
@@ -2680,6 +2684,8 @@ MonoBehaviour:
   bgItems: []
   respawnTimeStart: 3
   respawnTimeEnd: 6
+  _minY: 0
+  _maxY: 0
 --- !u!4 &308604118
 Transform:
   m_ObjectHideFlags: 0
@@ -10948,12 +10954,13 @@ MonoBehaviour:
   speed: 10
   speedUpDown: 5
   health: 30
-  maxHealth: 0
   eggs: 0
   moveEffect: {fileID: 0}
   playerAnim: {fileID: 0}
   playerHealthBar: {fileID: 695760229}
   eggsCollectedBar: {fileID: 137229657}
+  damageTaken: {fileID: 0}
+  eggCollectedPlus: {fileID: 0}
 --- !u!95 &796842899
 Animator:
   serializedVersion: 3
@@ -12071,6 +12078,8 @@ MonoBehaviour:
   - {fileID: 2120378558942980617, guid: b815870740510b14c8f1b673f8201236, type: 3}
   respawnTimeStart: 3
   respawnTimeEnd: 6
+  _minY: 0
+  _maxY: 0
 --- !u!1 &924049180
 GameObject:
   m_ObjectHideFlags: 0
@@ -18472,6 +18481,8 @@ MonoBehaviour:
   - {fileID: 9121318013272383111, guid: 0aaf8b1029fae23409ee5a180b857e37, type: 3}
   respawnTimeStart: 3
   respawnTimeEnd: 6
+  _minY: 0
+  _maxY: 0
 --- !u!1 &1728949261
 GameObject:
   m_ObjectHideFlags: 0
