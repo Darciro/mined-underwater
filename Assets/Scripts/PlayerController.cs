@@ -139,7 +139,6 @@ public class PlayerController : MonoBehaviour
             _gameController.gameDifficulty++;
             _gameController.eggsToCollect++;
             _gameController.level++;
-            _gameController.startGame = false;
             _sceneTransitions.LoadScene("Won");
         }
     }

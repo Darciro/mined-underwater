@@ -48,9 +48,11 @@ public class GameController : MonoBehaviour
     {
         _curLevel = GameObject.Find("LevelTextObject").GetComponent<Text>();
         _levelEggsToCollectObject = GameObject.Find("LevelEggsToCollectObject").GetComponent<Text>();
+        _mainUI = GameObject.Find("UI");
         
         if(_gameControllerInstance == null)
-        {    
+        {
+            Debug.Log("Startin new game");
             _gameControllerInstance = this; // In first scene, make us the singleton.
             DontDestroyOnLoad(gameObject);
             _curLevel.text = "Level " + level;
@@ -58,11 +60,15 @@ public class GameController : MonoBehaviour
         }
         else if (_gameControllerInstance != this)
         {
+            Debug.Log("REStartin the game");
+            Debug.Log("startGame " + startGame);
             Destroy(gameObject); // On reload, singleton already set, so destroy duplicate.
             _curLevel.text = "Level " + _gameControllerInstance.level;
             _levelEggsToCollectObject.text = _gameControllerInstance.eggsToCollect.ToString();
+            startGame = false;
+            StartLevel(true);
         }
-            
+
     }
 
     // Start is called before the first frame update
@@ -70,10 +76,8 @@ public class GameController : MonoBehaviour
     {
         audioSource = GetComponent<AudioSource>();
         _sceneTransitions = FindObjectOfType<SceneTransitions>();
-        _mainUI = GameObject.Find("UI");
         
-        _mainUI.SetActive(false);
-        StartCoroutine(StartLevel());
+        StartLevel();
 
         if (tutorial)
         {
@@ -95,6 +99,20 @@ public class GameController : MonoBehaviour
                 Tutorial(_tutorialCurrentStep);
             }
         }
+    }
+
+    void StartLevel(bool restart = false)
+    {
+        if (restart)
+        {
+            startGame = false;
+        }
+        else
+        {
+            _mainUI.SetActive(false);
+        }
+        
+        StartCoroutine(StartLevelRoutine());
     }
 
     public void PauseResumeGame(bool showPauseGui = true)
@@ -178,11 +196,18 @@ public class GameController : MonoBehaviour
         _tutorialSteps[i].SetActive(true);
     }
     
-    IEnumerator StartLevel()
+    IEnumerator StartLevelRoutine()
     {
-        yield return new WaitForSeconds(2f);
-        startGame = true;
-        GameObject.Find("LevelStartUI").SetActive(false);
-        _mainUI.SetActive(true);
+        while (!startGame)
+        {
+            Debug.Log("StartLevelRoutine");
+            yield return new WaitForSeconds(2f);
+            startGame = true;
+            GameObject.Find("LevelStartUI").SetActive(false);
+            _mainUI.SetActive(true);
+        
+            Debug.Log("FINISHED StartLevelRoutine");
+        }
+        
     }
 }
