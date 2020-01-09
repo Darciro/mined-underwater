@@ -1,14 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
     // Game variables
-    public static bool GameIsPaused = false;
+    public bool startGame = false;
+    public static bool gameIsPaused = false;
     public GameObject pauseMenuUI;
+    public int gameDifficulty = 0;
+    public int eggsToCollect = 10;
+    public int level = 1;
 
-    private int _gameDifficulty = 1;
+    private static GameController _gameControllerInstance;
     [SerializeField]
     private float _minMineSpawnTime = 1f;
     [SerializeField]
@@ -18,9 +23,13 @@ public class GameController : MonoBehaviour
     [SerializeField]
     private float _maxEggSpawnTime = 5f;
     private SceneTransitions _sceneTransitions;
+    private GameObject _mainUI;
+    private Text _curLevel;
+    private Text _levelEggsToCollectObject;
 
     // Tutorial
     public bool tutorial = false;
+    
     private static GameObject _tutorialUI;
     [SerializeField]
     private GameObject[] _tutorialSteps;
@@ -29,16 +38,42 @@ public class GameController : MonoBehaviour
     // Audio and FX
     public AudioClip mineExplosionSound;
     public AudioClip eggsColectedSound;
+    
     private AudioSource audioSource;
 
     // Player and Score
-
+    
+    
+    private void Awake()
+    {
+        _curLevel = GameObject.Find("LevelTextObject").GetComponent<Text>();
+        _levelEggsToCollectObject = GameObject.Find("LevelEggsToCollectObject").GetComponent<Text>();
+        
+        if(_gameControllerInstance == null)
+        {    
+            _gameControllerInstance = this; // In first scene, make us the singleton.
+            DontDestroyOnLoad(gameObject);
+            _curLevel.text = "Level " + level;
+            _levelEggsToCollectObject.text = eggsToCollect.ToString();
+        }
+        else if (_gameControllerInstance != this)
+        {
+            Destroy(gameObject); // On reload, singleton already set, so destroy duplicate.
+            _curLevel.text = "Level " + _gameControllerInstance.level;
+            _levelEggsToCollectObject.text = _gameControllerInstance.eggsToCollect.ToString();
+        }
+            
+    }
 
     // Start is called before the first frame update
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
         _sceneTransitions = FindObjectOfType<SceneTransitions>();
+        _mainUI = GameObject.Find("UI");
+        
+        _mainUI.SetActive(false);
+        StartCoroutine(StartLevel());
 
         if (tutorial)
         {
@@ -64,20 +99,19 @@ public class GameController : MonoBehaviour
 
     public void PauseResumeGame(bool showPauseGui = true)
     {
-        Debug.Log(showPauseGui);
-        if (GameIsPaused)
+        if (gameIsPaused)
         {
             if (showPauseGui)
                 pauseMenuUI.SetActive(false);
             Time.timeScale = 1f;
-            GameIsPaused = false;
+            gameIsPaused = false;
         }
         else
         {
             if (showPauseGui)
                 pauseMenuUI.SetActive(true);
             Time.timeScale = 0f;
-            GameIsPaused = true;
+            gameIsPaused = true;
         }
     }
 
@@ -142,5 +176,13 @@ public class GameController : MonoBehaviour
         }
         
         _tutorialSteps[i].SetActive(true);
+    }
+    
+    IEnumerator StartLevel()
+    {
+        yield return new WaitForSeconds(2f);
+        startGame = true;
+        GameObject.Find("LevelStartUI").SetActive(false);
+        _mainUI.SetActive(true);
     }
 }

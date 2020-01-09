@@ -4,8 +4,16 @@
     <e p="C:\Users\ricardo.e.carvalho\.Rider2019.3\system\extResources" t="IncludeRecursive" />
     <e p="C:\Users\ricardo.e.carvalho\.Rider2019.3\system\resharper-host\local\Transient\ReSharperHost\v193\SolutionCaches\_Mined underwater.-1808035134.00" t="ExcludeRecursive" />
     <e p="C:\xampp\htdocs\unity3d\Mined underwater" t="IncludeRecursive">
+      <e p="Assembly-CSharp-Editor-firstpass.csproj" t="IncludeRecursive" />
+      <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
+      <e p="Assembly-CSharp-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
+        <e p="Editor" t="Include">
+          <e p="Instant Screenshot" t="Include">
+            <e p="ScreenshotTaker.cs" t="Include" />
+          </e>
+        </e>
         <e p="EZ Camera Shake" t="Include">
           <e p="Demo" t="Include">
             <e p="Sample Scripts" t="Include">
@@ -27,6 +35,19 @@
         <e p="JuicyUI" t="Include">
           <e p="Demo" t="Include">
             <e p="ShopScroll.cs" t="Include" />
+          </e>
+        </e>
+        <e p="Plugins" t="Include">
+          <e p="ScreenshotCompanion" t="Include">
+            <e p="Editor" t="Include">
+              <e p="ScreenshotCompanionEditor.cs" t="Include" />
+              <e p="ScreenshotCompanionWindow.cs" t="Include" />
+            </e>
+            <e p="Framework" t="Include">
+              <e p="CameraObject.cs" t="Include" />
+              <e p="SettingsObject.cs" t="Include" />
+            </e>
+            <e p="ScreenshotCompanion.cs" t="Include" />
           </e>
         </e>
         <e p="Scripts" t="Include">

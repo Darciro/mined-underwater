@@ -8,38 +8,38 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
-    private Rigidbody2D _rb;
-    private BoxCollider2D _collider;
-    private Vector3 _touchPosition;
-    private Vector3 _direction;
-    private Vector2 _moveAmount;
-    
     public float speed;
     public float speedUpDown;
-    public int health;
-    public int eggs;
+    public int health = 100;
+    public int eggs = 0;
     public GameObject moveEffect;
-    public Animator playerAnim;
+    
     public Image playerHealthBar;
     public Image eggsCollectedBar;
     public GameObject damageTaken;
     public GameObject eggCollectedPlus;
 
-    private SceneTransitions sceneTransitions;
+    private Rigidbody2D _rb;
+    private BoxCollider2D _collider;
+    private Animator _playerAnim;
+    private SceneTransitions _sceneTransitions;
+    private GameController _gameController;
+    private Vector3 _touchPosition;
+    private Vector3 _direction;
+    private Vector2 _moveAmount;
     
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
         _collider = GetComponent<BoxCollider2D>();
-        playerAnim = gameObject.GetComponent<Animator>();
-        sceneTransitions = FindObjectOfType<SceneTransitions>();
-        health = 100;
-        eggs = 0;
+        _playerAnim = gameObject.GetComponent<Animator>();
+        _sceneTransitions = FindObjectOfType<SceneTransitions>();
+        _gameController = GameObject.Find("GameController").GetComponent<GameController>();
     }
 
     private void Update()
     {
-        playerAnim.SetBool("swimming", true);
+        _playerAnim.SetBool("swimming", true);
     }
 
     private void FixedUpdate()
@@ -54,9 +54,9 @@ public class PlayerController : MonoBehaviour
         #if UNITY_EDITOR_WIN
         Vector2 moveInput = new Vector2(0, Input.GetAxisRaw("Vertical"));
         _moveAmount = moveInput.normalized * speed;
-        playerAnim.SetBool("swimming", true);
+        _playerAnim.SetBool("swimming", true);
         _rb.MovePosition(_rb.position + _moveAmount * Time.fixedDeltaTime);
-        playerAnim.SetFloat("swimmingUpOrDown", _moveAmount.y);
+        _playerAnim.SetFloat("swimmingUpOrDown", _moveAmount.y);
         #endif
         // For tests purposes 
 
@@ -76,12 +76,12 @@ public class PlayerController : MonoBehaviour
                 _direction = (_touchPosition - transform.position);
                 _rb.velocity = new Vector2(_direction.x, _direction.y) * speedUpDown;
             
-                playerAnim.SetFloat("swimmingUpOrDown", _direction.y);
+                _playerAnim.SetFloat("swimmingUpOrDown", _direction.y);
 
                 if (touch.phase == TouchPhase.Ended)
                 {
                     _rb.velocity = Vector2.zero;
-                    playerAnim.SetFloat("swimmingUpOrDown", 0f);
+                    _playerAnim.SetFloat("swimmingUpOrDown", 0f);
                 }
                 
             }
@@ -96,7 +96,7 @@ public class PlayerController : MonoBehaviour
     {
         health -= amount;
         UpdateHealthUI(health);
-        playerAnim.SetTrigger("hurt");
+        _playerAnim.SetTrigger("hurt");
         var go= Instantiate(damageTaken, transform.position, Quaternion.identity, transform);
         go.GetComponent<TextMesh>().text = amount.ToString();
         if (health <= 0)
@@ -107,7 +107,7 @@ public class PlayerController : MonoBehaviour
 
     private void Die()
     {
-        playerAnim.SetTrigger("dead");
+        _playerAnim.SetTrigger("dead");
         _rb.isKinematic = true;
         _collider.enabled = false;
         StartCoroutine(ShowLooseScreen());
@@ -117,7 +117,7 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(3f);
         
         Destroy(this.gameObject);
-        sceneTransitions.LoadScene("Loose");
+        _sceneTransitions.LoadScene("Loose");
     }
     
     void UpdateHealthUI(float currentHealth) {
@@ -129,14 +129,18 @@ public class PlayerController : MonoBehaviour
 
     }
     
-    public void GetEgg(int amount)
+    public void CollectEgg(int amount)
     {
         eggs += amount;
         UpdateEgghUI(eggs);
         Instantiate(eggCollectedPlus, transform.position, Quaternion.identity, transform);
-        if (eggs >= 10)
+        if (eggs >= _gameController.eggsToCollect)
         {
-            sceneTransitions.LoadScene("Won");
+            _gameController.gameDifficulty++;
+            _gameController.eggsToCollect++;
+            _gameController.level++;
+            _gameController.startGame = false;
+            _sceneTransitions.LoadScene("Won");
         }
     }
     

@@ -6,22 +6,27 @@ using UnityEngine.UI;
 
 public class UIController : MonoBehaviour
 {
-    public Text timerText;
-    private static float timer;
+    private Text _timerText;
+    private static float _timer;
+    private GameController _gameController;
 
     // Start is called before the first frame update
     void Start()
     {
-        timerText = GameObject.Find("TimerTextObject").GetComponent<Text>();
+        _timerText = GameObject.Find("TimerTextObject").GetComponent<Text>();
+        _gameController = GameObject.Find("GameController").GetComponent<GameController>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        timer += Time.deltaTime;
-        string minutes = Mathf.Floor(timer / 60).ToString("00");
-        string seconds = (timer % 60).ToString("00");
+        if (!_gameController.startGame)
+            return;
         
-        timerText.text = string.Format("{0}:{1}", minutes, seconds);
+        _timer += Time.deltaTime;
+        string minutes = Mathf.Floor(_timer / 60).ToString("00");
+        string seconds = (_timer % 60).ToString("00");
+        
+        _timerText.text = string.Format("{0}:{1}", minutes, seconds);
     }
 }

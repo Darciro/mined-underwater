@@ -18,6 +18,7 @@
       <Path>Builds</Path>
       <Path>Library</Path>
       <Path>Logs</Path>
+      <Path>Screenshots</Path>
       <Path>Temp</Path>
       <Path>obj</Path>
     </explicitExcludes>

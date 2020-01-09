@@ -20,7 +20,7 @@ public class TurtleEgg : MonoBehaviour
     {
         if (other.CompareTag("Player")) {
             gameController.PlaySoundEffect("eggColected");
-            other.GetComponent<PlayerController>().GetEgg(1);
+            other.GetComponent<PlayerController>().CollectEgg(1);
             Destroy(gameObject);
         }   
     }

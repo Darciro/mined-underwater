@@ -7,41 +7,44 @@ public class Spawner : MonoBehaviour
     public GameObject minePrefab;
     
     private float _respawnTime;
-    private Vector2 screenBounds;
-    private GameController gameController;
+    private Vector2 _screenBounds;
+    private GameController _gameController;
     [SerializeField]
     private string type;
     
     void Start () {
-        gameController = GameObject.Find("GameController").GetComponent<GameController>();
-        StartCoroutine(mineWaves());
+        _gameController = GameObject.Find("GameController").GetComponent<GameController>();
+        StartCoroutine(Respawner());
     }
     
     void Update () {
         switch (type)
         {
             case "mine":
-                _respawnTime = Random.Range(gameController.GetMinMineSpawnTime(), gameController.GetMaxMineSpawnTime());
+                _respawnTime = Random.Range(_gameController.GetMinMineSpawnTime(), _gameController.GetMaxMineSpawnTime()) - _gameController.gameDifficulty;
                 break;
             case "egg":
-                _respawnTime = Random.Range(gameController.GetMinEggSpawnTime(), gameController.GetMaxEggSpawnTime());
+                _respawnTime = Random.Range(_gameController.GetMinEggSpawnTime(), _gameController.GetMaxEggSpawnTime());
                 break;
             default:
                 _respawnTime = Random.Range(1f, 3f);
                 break;
         }
-        screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
+        _screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
     }
     
-    private void spawnMine(){
+    private void SpawnObject(){
+        if (!_gameController.startGame)
+            return;
+        
         GameObject a = Instantiate(minePrefab);
-        a.transform.position = new Vector2(screenBounds.x, Random.Range(-screenBounds.y, screenBounds.y));
+        a.transform.position = new Vector2(_screenBounds.x, Random.Range(-_screenBounds.y, _screenBounds.y));
     }
     
-    IEnumerator mineWaves(){
+    IEnumerator Respawner(){
         while(true){
             yield return new WaitForSeconds(_respawnTime);
-            spawnMine();
+            SpawnObject();
         }
     }
 }
