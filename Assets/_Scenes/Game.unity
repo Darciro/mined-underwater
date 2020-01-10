@@ -2114,7 +2114,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   speedUpDown: 5
-  health: 30
+  health: 100
   eggs: 0
   moveEffect: {fileID: 0}
   playerHealthBar: {fileID: 1109075474}
@@ -7855,7 +7855,7 @@ RectTransform:
   m_GameObject: {fileID: 382671531}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.1686, y: 2.1686, z: 2.1686}
+  m_LocalScale: {x: 1.8433101, y: 1.8433101, z: 1.8433101}
   m_Children:
   - {fileID: 1747986821}
   - {fileID: 1323828477}
@@ -7869,7 +7869,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 232, y: -252}
+  m_AnchoredPosition: {x: 192, y: -202}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &404849947
@@ -13453,12 +13453,16 @@ MonoBehaviour:
   startGame: 0
   pauseMenuUI: {fileID: 1954395067}
   gameDifficulty: 0
-  eggsToCollect: 2
+  eggsToCollect: 1
   level: 1
+  timeToStartLevel: 5
+  playerHealth: 100
   _minMineSpawnTime: 1
   _maxMineSpawnTime: 3
   _minEggSpawnTime: 2
   _maxEggSpawnTime: 5
+  _mainUI: {fileID: 0}
+  _startLevelUI: {fileID: 0}
   tutorial: 0
   _tutorialSteps: []
   mineExplosionSound: {fileID: 8300000, guid: d1041b69fb18ab9489d99ceb977020cd, type: 3}
@@ -15449,7 +15453,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 0
-  m_FillAmount: 1
+  m_FillAmount: 0
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
@@ -17676,8 +17680,8 @@ MonoBehaviour:
   - {fileID: 2120378558942980617, guid: b815870740510b14c8f1b673f8201236, type: 3}
   respawnTimeStart: 4
   respawnTimeEnd: 8
-  _minY: 0
-  _maxY: -3
+  _minY: -2.6
+  _maxY: -3.6
 --- !u!4 &1691013663
 Transform:
   m_ObjectHideFlags: 0

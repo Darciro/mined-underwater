@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
     public int health = 100;
     public int eggs = 0;
     public GameObject moveEffect;
-    
+
     public Image playerHealthBar;
     public Image eggsCollectedBar;
     public GameObject damageTaken;
@@ -27,7 +27,7 @@ public class PlayerController : MonoBehaviour
     private Vector3 _touchPosition;
     private Vector3 _direction;
     private Vector2 _moveAmount;
-    
+
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
@@ -35,6 +35,9 @@ public class PlayerController : MonoBehaviour
         _playerAnim = gameObject.GetComponent<Animator>();
         _sceneTransitions = FindObjectOfType<SceneTransitions>();
         _gameController = GameObject.Find("GameController").GetComponent<GameController>();
+
+        health = _gameController.playerHealth;
+        UpdateHealthUI(health);
     }
 
     private void Update()
@@ -44,38 +47,40 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-
         if (health <= 0)
         {
             return;
         }
-        
+
         // For tests purposes 
-        #if UNITY_EDITOR_WIN
+#if UNITY_EDITOR_WIN
         Vector2 moveInput = new Vector2(0, Input.GetAxisRaw("Vertical"));
         _moveAmount = moveInput.normalized * speed;
         _playerAnim.SetBool("swimming", true);
         _rb.MovePosition(_rb.position + _moveAmount * Time.fixedDeltaTime);
         _playerAnim.SetFloat("swimmingUpOrDown", _moveAmount.y);
-        #endif
+#endif
         // For tests purposes 
 
-        #if UNITY_ANDROID
-        
+#if UNITY_ANDROID
+
         if (Input.touchCount > 0)
         {
             Touch touch = Input.GetTouch(0);
-            
-            if(touch.position.x > Screen.width / 2){
+
+            if (touch.position.x > Screen.width / 2)
+            {
                 // Right side
-            }else{
+            }
+            else
+            {
                 // Left side
-                
+
                 _touchPosition = Camera.main.ScreenToWorldPoint(touch.position);
                 _touchPosition.z = 0;
                 _direction = (_touchPosition - transform.position);
                 _rb.velocity = new Vector2(_direction.x, _direction.y) * speedUpDown;
-            
+
                 _playerAnim.SetFloat("swimmingUpOrDown", _direction.y);
 
                 if (touch.phase == TouchPhase.Ended)
@@ -83,21 +88,19 @@ public class PlayerController : MonoBehaviour
                     _rb.velocity = Vector2.zero;
                     _playerAnim.SetFloat("swimmingUpOrDown", 0f);
                 }
-                
             }
-
         }
 
-        #endif
-
+#endif
     }
-    
+
     public void TakeDamage(int amount)
     {
         health -= amount;
+        _gameController.playerHealth = health;
         UpdateHealthUI(health);
         _playerAnim.SetTrigger("hurt");
-        var go= Instantiate(damageTaken, transform.position, Quaternion.identity, transform);
+        var go = Instantiate(damageTaken, transform.position, Quaternion.identity, transform);
         go.GetComponent<TextMesh>().text = amount.ToString();
         if (health <= 0)
         {
@@ -112,23 +115,23 @@ public class PlayerController : MonoBehaviour
         _collider.enabled = false;
         StartCoroutine(ShowLooseScreen());
     }
-    
-    IEnumerator ShowLooseScreen() {
+
+    IEnumerator ShowLooseScreen()
+    {
         yield return new WaitForSeconds(3f);
-        
+
         Destroy(this.gameObject);
         _sceneTransitions.LoadScene("Loose");
     }
-    
-    void UpdateHealthUI(float currentHealth) {
+
+    void UpdateHealthUI(float currentHealth)
+    {
         var curHealth = playerHealthBar.transform.parent.Find("CurrentHealth");
         curHealth.GetComponent<Text>().text = currentHealth.ToString();
-        
-        playerHealthBar.fillAmount = currentHealth / 100;
-        
 
+        playerHealthBar.fillAmount = currentHealth / 100;
     }
-    
+
     public void CollectEgg(int amount)
     {
         eggs += amount;
@@ -139,16 +142,20 @@ public class PlayerController : MonoBehaviour
             _gameController.gameDifficulty++;
             _gameController.eggsToCollect++;
             _gameController.level++;
+            _gameController.startGame = false;
             _sceneTransitions.LoadScene("Won");
         }
     }
-    
-    void UpdateEgghUI(float eggsCurCollected) {
+
+    void UpdateEgghUI(float eggsCurCollected)
+    {
         var eggsCollected = eggsCollectedBar.transform.parent.Find("CurrentCollectedEggs");
         eggsCollected.GetComponent<Text>().text = eggsCurCollected.ToString();
-        
-        eggsCollectedBar.fillAmount = eggsCurCollected / 10;
+        float progressPercent = (eggs * 100 / _gameController.eggsToCollect);
 
+        Debug.Log(eggs);
+        Debug.Log( _gameController.eggsToCollect);
+        Debug.Log(progressPercent);
+        eggsCollectedBar.fillAmount = (progressPercent / 100);
     }
-    
 }

@@ -4,7 +4,11 @@
     <list default="true" id="1b84dbc9-1045-4b21-80f7-965bba630727" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Mined underwater/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Mined underwater/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Mine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Mine.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Spawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Spawner.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scenes/Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scenes/Game.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scenes/Won.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scenes/Won.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,12 +77,12 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/QuitGame.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/deployMines.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/BackgroundRepeater.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Mine.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/FloatingText.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/LayerCorrection.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/TurtleEgg.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Spawner.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UIController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Mine.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Spawner.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameController.cs" />
       </list>
@@ -153,6 +157,7 @@
       <workItem from="1578401577634" duration="1723000" />
       <workItem from="1578493784666" duration="10456000" />
       <workItem from="1578572059744" duration="1980000" />
+      <workItem from="1578652147776" duration="13291000" />
     </task>
     <servers />
   </component>

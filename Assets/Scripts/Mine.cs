@@ -16,10 +16,10 @@ public class Mine : MonoBehaviour
     [SerializeField]
     private int _criticalPercent;
     private int _damage;
-    private GameController gameController;
+    private GameController _gameController;
     
     void Start () {
-        gameController = GameObject.Find("GameController").GetComponent<GameController>();
+        _gameController = GameObject.Find("GameController").GetComponent<GameController>();
         _damage = Random.Range(_damageMin, _damageMax);
     }
 
@@ -30,7 +30,7 @@ public class Mine : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player")) {
-            gameController.PlaySoundEffect("mineExplosion");
+            _gameController.PlaySoundEffect("mineExplosion");
             CameraShaker.Instance.ShakeOnce(4f, 4f, .1f, 1f);
             Instantiate(explosionEffect, transform.position, Quaternion.identity);
             other.GetComponent<PlayerController>().TakeDamage(_damage);

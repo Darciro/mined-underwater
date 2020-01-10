@@ -21,7 +21,7 @@ public class Spawner : MonoBehaviour
         switch (type)
         {
             case "mine":
-                _respawnTime = Random.Range(_gameController.GetMinMineSpawnTime(), _gameController.GetMaxMineSpawnTime()) - _gameController.gameDifficulty;
+                _respawnTime = Random.Range(_gameController.GetMinMineSpawnTime(), _gameController.GetMaxMineSpawnTime()) - (_gameController.gameDifficulty / 10f);
                 break;
             case "egg":
                 _respawnTime = Random.Range(_gameController.GetMinEggSpawnTime(), _gameController.GetMaxEggSpawnTime());
